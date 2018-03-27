@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int N = 0;
+            int[] nizBrojeva = new int[50];
+            Console.WriteLine("Program za racunanje sume vrednosti elemenata niza.");
+            N = UnosBrojaElemenataNiza();
+            UnosElemenataNiza(N, nizBrojeva);
+            Console.WriteLine(SumaVrednostiNiza(N, nizBrojeva));
+        }
+        static int UnosBrojaElemenataNiza()
+        {
+            int brojElem = 0;
+            Console.Write("Unesite zeljeni broj elemenata: ");
+            brojElem = Convert.ToInt32(Console.ReadLine());
+            return brojElem;
+        }
+        static void UnosElemenataNiza (int n, int[] nizElem)
+        {
+            for (int i = 0; i < n ; i++)
+            {
+                Console.Write("Unesite {0}. clan niza: ", i + 1);
+                nizElem[i] = Convert.ToInt32(Console.ReadLine());
+            }
+        }
+        static int SumaVrednostiNiza(int n, int[] nizElem) 
+        {
+            // Nije mi jasno kako ovaj podprogram zna koji su clanovi niza nizElem
+            int suma = 0;
+            for(int i=0; i<n ; i++)
+            {
+                suma = suma + nizElem[i];
+            }
+            return suma;
+        }
+
+    }
+}
